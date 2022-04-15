@@ -18,6 +18,12 @@ const getLinks = (links) => {
         Publications
       </Link>
     ),
+    pi: (
+      <Link key="pi" to="/principal-investigator">
+        <FontAwesomeIcon icon={faBook} />
+        Dr. Willerth
+      </Link>
+    ),
   };
 
   return (

@@ -19,8 +19,6 @@ const ResearchContainer = () => {
                     gatsbyImageData(
                       quality: 70,
                       placeholder: BLURRED,
-                      height: 300,
-                      width: 300,
                     )
                   }
                 }

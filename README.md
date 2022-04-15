@@ -169,3 +169,16 @@ If you run into issues with images not displaying correctly in the development s
 * Wooden robot image is courtesy of [Kaboompics.com from Pexels](https://www.pexels.com/photo/wooden-robot-6069/)
 * Hourglass image is courtesy of [Aron Visuals on Unsplash](https://unsplash.com/photos/BXOXnQ26B7o)
 * Robot army image is courtesy of [Mina FC on Unsplash](https://unsplash.com/photos/3QKsG0fDrC8)
+
+
+## Changes from fork
+
+- Get publications from google scholar
+
+TODO:
+- People from a csv
+- Scientist page
+- Twitter embed
+- Youtube embed
+- Beter images
+- Opportunities

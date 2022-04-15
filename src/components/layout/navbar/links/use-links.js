@@ -4,18 +4,21 @@ const useLinks = () => {
   const query = useStaticQuery(
     graphql`
       query {
-        people: allMarkdownRemark(filter: { fileAbsolutePath: { regex: "/people/" } }) {
-          edges {
-            node {
-              frontmatter {
-                title
-              }
-            }
+        people: allPeopleCsv{
+          nodes {
+            name
           }
         }
-      publications(list: {elemMatch: {title: {regex: "/.*/"}}}) {
+        googleScholarPublications(list: {elemMatch: {title: {regex: "/.*/"}}}) {
           list{
             title
+          }
+        }
+        markdown: allMarkdownRemark(filter: { fileAbsolutePath: { regex: "/pi.md/" } }) {
+          edges {
+            node {
+              id
+            }
           }
         }
       }
@@ -24,11 +27,14 @@ const useLinks = () => {
 
   const links = [];
 
-  if (query.people.edges.length > 0) {
+  if (query?.people?.nodes.length > 0) {
     links.push('people');
   }
-  if (query.publications) {
+  if (query?.googleScholarPublications) {
     links.push('publications');
+  }
+  if (query?.markdown?.edges?.length > 0) {
+    links.push('pi');
   }
 
   return links;

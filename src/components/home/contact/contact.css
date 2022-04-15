@@ -2,3 +2,12 @@
   color: var(--color-primary);
   margin-right: 0.5rem;
 }
+
+.contact h3 {
+  margin-bottom: 0;
+}
+
+.contact h4 {
+  margin-bottom: 0;
+  line-height: 1rem;
+}

@@ -10,14 +10,14 @@ const HeroContainer = ({
   const query = useStaticQuery(
     graphql`
       query {
-        hero: file(relativePath: { eq: "hero.png" }) {
+        hero: file(relativePath: { eq: "background.jpg" }) {
           childImageSharp {
             gatsbyImageData(
               quality: 70,
               placeholder: BLURRED,
               width: 1920,
             )
-          }
+          } 
         }
       }
     `,

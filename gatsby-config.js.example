@@ -1,5 +1,5 @@
 module.exports = {
-  pathPrefix: '/~willerth/new',
+  // pathPrefix: '/gatsby-starter-scientist',
   siteMetadata: {
     author: "Stephanie Willerth",
     description:
@@ -22,7 +22,7 @@ module.exports = {
     publications: [],
     googleScholarUserID: "-rY-_JoAAAAJ",
     serpAPIKey:
-      "26db680e17cdea6dbc6a86cb7c7a91e5adaff27c6e80623217505dda4c113aff",
+      "",
     // An array of links to display in the page footer. Include as many as you like
     // (not just the ones here). If either the link or text is missing,
     // it will not be shown. Delete this field and/or all entires to disable

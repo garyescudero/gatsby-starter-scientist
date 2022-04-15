@@ -31,8 +31,7 @@
     height: auto;
     margin-right: 0;
     max-height: 350px;
-    max-width: 350px;
+    max-width: 100%;
     shape-outside: none;
-    width: 100%;
   }
 }

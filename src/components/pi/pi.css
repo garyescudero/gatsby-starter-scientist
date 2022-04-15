@@ -8,13 +8,36 @@
   display: flex;
   margin-bottom: 1.5rem;
 }
-.people header h1 {
+
+.people  h2,
+.people  h3,
+.people  h4 {
+  margin-bottom: 0;
+  line-height: 1.5rem;
+}
+
+.people header h1,
+.people header h2,
+.people header h3,
+.people header h4 {
   margin-bottom: 0;
 }
+
+.people ul {
+  margin-top: 1rem;
+}
+
+/* .people li {
+  align-items: center;
+  display: flex;
+  margin-bottom: .8rem;
+} */
+
 .people header svg {
   color: var(--color-primary);
   margin-left: 1rem;
 }
+
 .people section {
   margin: 2rem 0;
   max-width: 960px;
@@ -51,6 +74,7 @@
   margin-right: 1.5rem;
   min-width: 300px;
   width: 300px;
+  float: right;
 }
 .people__list-image svg {
   fill: var(--color-primary);
