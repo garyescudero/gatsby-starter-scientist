@@ -1,13 +1,13 @@
-import React from 'react';
+import React from "react"
 
-import About from './about/about-container';
-import Contact from './contact/contact-container';
-import Landing from './landing/landing-container';
-import Opportunities from './opportunities/opportunities-container';
-import Research from './research/research-container';
-import { GutterLeft, GutterRight } from './gutter/gutter';
+import About from "./about/about-container"
+import Contact from "./contact/contact-container"
+import Landing from "./landing/landing-container"
+import Opportunities from "./opportunities/opportunities-container"
+import Research from "./research/research-container"
+import { GutterLeft, GutterRight } from "./gutter/gutter"
 
-import './home.css';
+import "./home.css"
 
 const Home = () => (
   <>
@@ -23,6 +23,6 @@ const Home = () => (
       <GutterRight />
     </div>
   </>
-);
+)
 
-export default Home;
+export default Home

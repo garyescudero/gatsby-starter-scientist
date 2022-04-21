@@ -8,10 +8,10 @@ This is a website template built with Gatsby for a typical scientist or laborato
 
 ### Prerequisites
 
-* [Node.js](https://nodejs.org/en/download/)
-* [git](https://git-scm.com/downloads)
-* [GitHub account](https://github.com/)
-* code editor, e.g [VS Code](https://code.visualstudio.com/)
+- [Node.js](https://nodejs.org/en/download/)
+- [git](https://git-scm.com/downloads)
+- [GitHub account](https://github.com/)
+- code editor, e.g [VS Code](https://code.visualstudio.com/)
 
 ### Project creation
 
@@ -20,11 +20,13 @@ This is a website template built with Gatsby for a typical scientist or laborato
 2. (Optional) Rename the repository from the `Settings` menu. For example to `yourname-lab`.
 
 3. Clone repository from command line. If you changed the repository name in step 2, be sure to update the url. This will create a folder on your machine in the current directory with the project's code.
+
 ```
 git clone https://github.com/[your-user-name]/gatsby-starter-scientist.git
 ```
 
 4. Move into project directory and install dependencies.
+
 ```
 cd gatsby-starter-scientist
 npm install
@@ -54,11 +56,13 @@ You can also do this using [GitHub's Desktop client](https://desktop.github.com/
 After making changes to your site, you need to build an optimized version and deploy it to the hosting server. The site is hosted by default on GitHub, which is free.
 
 1. Build the site for production
+
 ```
 npm run build
 ```
 
 2. Deploy the site. You will be asked for your GitHub credentials.
+
 ```
 npm run deploy
 ```
@@ -142,6 +146,7 @@ The site logo is located in the top left of the navigation bar and can be change
 ### Theme
 
 The colour theme can be changed by editing `src/components/layout/layout.css`. You should only edit the `color-primary` variables and ensure the resulting selections have sufficient contrast with the background colour in both the light and dark modes. You can use a site like [contrast finder](https://app.contrast-finder.org/?lang=en) to test the contrast of your theme.
+
 ```
 body.light-mode {
   --color-background: #fff;
@@ -163,22 +168,23 @@ If you run into issues with images not displaying correctly in the development s
 
 ## Credits
 
-* Vector cartoons are by [Lukasz Adam](https://lukaszadam.com/)
-* Icons are from the free repository at [FontAwesome](https://fontawesome.com/)
-* Hero image is courtesy of [Ramón Salinero on Unsplash](https://unsplash.com/photos/vEE00Hx5d0Q).
-* Wooden robot image is courtesy of [Kaboompics.com from Pexels](https://www.pexels.com/photo/wooden-robot-6069/)
-* Hourglass image is courtesy of [Aron Visuals on Unsplash](https://unsplash.com/photos/BXOXnQ26B7o)
-* Robot army image is courtesy of [Mina FC on Unsplash](https://unsplash.com/photos/3QKsG0fDrC8)
-
+- Vector cartoons are by [Lukasz Adam](https://lukaszadam.com/)
+- Icons are from the free repository at [FontAwesome](https://fontawesome.com/)
+- Hero image is courtesy of [Ramón Salinero on Unsplash](https://unsplash.com/photos/vEE00Hx5d0Q).
+- Wooden robot image is courtesy of [Kaboompics.com from Pexels](https://www.pexels.com/photo/wooden-robot-6069/)
+- Hourglass image is courtesy of [Aron Visuals on Unsplash](https://unsplash.com/photos/BXOXnQ26B7o)
+- Robot army image is courtesy of [Mina FC on Unsplash](https://unsplash.com/photos/3QKsG0fDrC8)
 
 ## Changes from fork
 
 - Get publications from google scholar
 
 TODO:
-- People from a csv
-- Scientist page
+
+- People from a csv X
+- Scientist page X
 - Twitter embed
-- Youtube embed
+- Youtube embed X
 - Beter images
-- Opportunities
+- Opportunities X
+- Book section

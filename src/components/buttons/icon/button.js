@@ -1,8 +1,8 @@
-import PropTypes from 'prop-types';
-import React from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import PropTypes from "prop-types"
+import React from "react"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 
-import StyledButton from './button-style';
+import StyledButton from "./button-style"
 
 const IconButton = ({
   ariaLabel,
@@ -13,11 +13,7 @@ const IconButton = ({
   spin,
   ...props
 }) => (
-  <StyledButton
-    aria-hidden={false}
-    aria-label={ariaLabel}
-    {...props}
-  >
+  <StyledButton aria-hidden={false} aria-label={ariaLabel} {...props}>
     <FontAwesomeIcon
       icon={icon}
       pulse={pulse}
@@ -26,14 +22,14 @@ const IconButton = ({
       spin={spin}
     />
   </StyledButton>
-);
+)
 
 IconButton.defaultProps = {
   pulse: false,
   rotation: null,
-  size: '1x',
+  size: "1x",
   spin: false,
-};
+}
 
 IconButton.propTypes = {
   ariaLabel: PropTypes.string.isRequired,
@@ -42,6 +38,6 @@ IconButton.propTypes = {
   rotation: PropTypes.number,
   size: PropTypes.string,
   spin: PropTypes.bool,
-};
+}
 
-export default IconButton;
+export default IconButton

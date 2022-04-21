@@ -1,7 +1,7 @@
-import React from 'react';
-import { useStaticQuery, graphql } from 'gatsby';
+import React from "react"
+import { useStaticQuery, graphql } from "gatsby"
 
-import Contact from './contact';
+import Contact from "./contact"
 
 const ContactContainer = () => {
   const query = useStaticQuery(
@@ -11,15 +11,12 @@ const ContactContainer = () => {
           html
         }
       }
-    `,
-  );
+    `
+  )
 
-  return (
-    query.markdown === null
-    || query.markdown.html === ''
-      ? null
-      : <Contact html={query.markdown.html} />
-  );
-};
+  return query.markdown === null || query.markdown.html === "" ? null : (
+    <Contact html={query.markdown.html} />
+  )
+}
 
-export default ContactContainer;
+export default ContactContainer

@@ -1,7 +1,7 @@
-import PropTypes from 'prop-types';
-import styled from 'styled-components';
+import PropTypes from "prop-types"
+import styled from "styled-components"
 
-import DefaultButton from '../button-defaults';
+import DefaultButton from "../button-defaults"
 
 const Button = styled(DefaultButton)`
   border-radius: 3px;
@@ -15,14 +15,14 @@ const Button = styled(DefaultButton)`
   &:hover:not([disabled]) {
     color: var(--color-font-dark);
   }
-`;
+`
 
 Button.defaultProps = {
   disabled: false,
-};
+}
 
 Button.propTypes = {
   kind: PropTypes.string,
-};
+}
 
-export default Button;
+export default Button

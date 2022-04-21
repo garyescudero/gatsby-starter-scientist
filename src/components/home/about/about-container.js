@@ -1,7 +1,7 @@
-import React from 'react';
-import { useStaticQuery, graphql } from 'gatsby';
+import React from "react"
+import { useStaticQuery, graphql } from "gatsby"
 
-import About from './about';
+import About from "./about"
 
 const AboutContainer = () => {
   const query = useStaticQuery(
@@ -12,31 +12,23 @@ const AboutContainer = () => {
           frontmatter {
             image {
               childImageSharp {
-                gatsbyImageData(
-                  quality: 70,
-                  placeholder: BLURRED,
-                  width: 350,
-                )
+                gatsbyImageData(quality: 70, placeholder: BLURRED, width: 350)
               }
             }
             title
           }
         }
       }
-    `,
-  );
+    `
+  )
 
-  return (
-    query.markdown
-      ? (
-        <About
-          html={query.markdown.html}
-          image={query.markdown.frontmatter.image.childImageSharp.gatsbyImageData}
-          title={query.markdown.frontmatter.title}
-        />
-      )
-      : null
-  );
-};
+  return query.markdown ? (
+    <About
+      html={query.markdown.html}
+      image={query.markdown.frontmatter.image.childImageSharp.gatsbyImageData}
+      title={query.markdown.frontmatter.title}
+    />
+  ) : null
+}
 
-export default AboutContainer;
+export default AboutContainer

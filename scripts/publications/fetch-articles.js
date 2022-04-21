@@ -4,7 +4,6 @@ const parseAuthors = authors => authors.map(author => author.name)
 
 const parseYear = date => Number(date.split(" ")[0])
 
-
 const formatAuthors = (authors, title) => {
   return authors.join(", ")
 }

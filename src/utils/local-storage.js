@@ -1,33 +1,33 @@
-const windowGlobal = typeof window !== 'undefined' && window;
+const windowGlobal = typeof window !== "undefined" && window
 const localAdapter = windowGlobal
   ? windowGlobal.localStorage
   : {
-    getItem: () => null,
-    removeItem: () => {},
-    setItem: () => {},
-  };
+      getItem: () => null,
+      removeItem: () => {},
+      setItem: () => {},
+    }
 
 const storageSupport = () => {
   try {
-    const test = 'test-storage';
-    localAdapter.setItem(test, test);
-    localAdapter.removeItem(test);
-    return true;
+    const test = "test-storage"
+    localAdapter.setItem(test, test)
+    localAdapter.removeItem(test)
+    return true
   } catch (error) {
-    return false;
+    return false
   }
-};
+}
 
-export const getLocalStorage = (key) => {
+export const getLocalStorage = key => {
   if (storageSupport) {
-    return JSON.parse(localAdapter.getItem(key));
+    return JSON.parse(localAdapter.getItem(key))
   }
-  return null;
-};
+  return null
+}
 
 export const setLocalStorage = (key, value) => {
   if (storageSupport) {
-    return localAdapter.setItem(key, JSON.stringify(value));
+    return localAdapter.setItem(key, JSON.stringify(value))
   }
-  return null;
-};
+  return null
+}

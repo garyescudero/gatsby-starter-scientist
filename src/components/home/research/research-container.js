@@ -1,25 +1,24 @@
-import React from 'react';
-import { useStaticQuery, graphql } from 'gatsby';
+import React from "react"
+import { useStaticQuery, graphql } from "gatsby"
 
-import Research from './research';
+import Research from "./research"
 
-import sortMarkdown from '../../../utils/sort-markdown';
+import sortMarkdown from "../../../utils/sort-markdown"
 
 const ResearchContainer = () => {
   const query = useStaticQuery(
     graphql`
       query {
-        markdown: allMarkdownRemark(filter: { fileAbsolutePath: { regex: "/research/" } }) {
+        markdown: allMarkdownRemark(
+          filter: { fileAbsolutePath: { regex: "/research/" } }
+        ) {
           edges {
             node {
               html
               frontmatter {
                 image {
                   childImageSharp {
-                    gatsbyImageData(
-                      quality: 70,
-                      placeholder: BLURRED,
-                    )
+                    gatsbyImageData(quality: 70, placeholder: BLURRED)
                   }
                 }
                 title
@@ -29,16 +28,12 @@ const ResearchContainer = () => {
           }
         }
       }
-    `,
-  );
+    `
+  )
 
-  const markdown = sortMarkdown(query.markdown.edges, ['order', 'title']);
+  const markdown = sortMarkdown(query.markdown.edges, ["order", "title"])
 
-  return (
-    markdown.length > 0
-      ? <Research markdown={markdown} />
-      : null
-  );
-};
+  return markdown.length > 0 ? <Research markdown={markdown} /> : null
+}
 
-export default ResearchContainer;
+export default ResearchContainer

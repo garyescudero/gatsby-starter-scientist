@@ -18,10 +18,10 @@ const PI = ({ pi }) => {
         <header>
           <h1>{pi.frontmatter.name}</h1>
         </header>
-        {pi.frontmatter.image && <Portrait image={pi.frontmatter.image} name={pi.frontmatter.name} />}
-        {pi.html && (
-          <div dangerouslySetInnerHTML={{ __html: pi.html }} />
+        {pi.frontmatter.image && (
+          <Portrait image={pi.frontmatter.image} name={pi.frontmatter.name} />
         )}
+        {pi.html && <div dangerouslySetInnerHTML={{ __html: pi.html }} />}
       </section>
       <Contact />
     </div>

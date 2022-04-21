@@ -1,7 +1,7 @@
-import React from 'react';
-import { useStaticQuery, graphql } from 'gatsby';
+import React from "react"
+import { useStaticQuery, graphql } from "gatsby"
 
-import Landing from './landing';
+import Landing from "./landing"
 
 const LandingContainer = () => {
   const { site } = useStaticQuery(
@@ -15,18 +15,14 @@ const LandingContainer = () => {
           }
         }
       }
-    `,
-  );
+    `
+  )
 
-  const { author, description, primaryLinks } = site.siteMetadata;
+  const { author, description, primaryLinks } = site.siteMetadata
 
   return (
-    <Landing
-      author={author}
-      description={description}
-      links={primaryLinks}
-    />
-  );
-};
+    <Landing author={author} description={description} links={primaryLinks} />
+  )
+}
 
-export default LandingContainer;
+export default LandingContainer

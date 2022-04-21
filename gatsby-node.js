@@ -107,7 +107,7 @@ exports.createSchemaCustomization = ({ actions, schema }) => {
         name: "String",
         title: "String",
         category: "String",
-      //  image: "String",
+        //  image: "String",
         current_alumni: "String",
         description: "String",
         email: "String",

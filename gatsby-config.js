@@ -1,5 +1,5 @@
 module.exports = {
-  pathPrefix: '/~willerth/new',
+  pathPrefix: "/~willerth",
   siteMetadata: {
     author: "Stephanie Willerth",
     description:
@@ -15,7 +15,7 @@ module.exports = {
       "people",
       "publications",
       "contact",
-      "pi"
+      "Dr. Willerth",
     ],
     // List of PubMed IDs to include on the publication page. Delete this field
     // and/or all entires if you do not want the publication page.

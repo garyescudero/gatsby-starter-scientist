@@ -1,20 +1,24 @@
-import { useStaticQuery, graphql } from 'gatsby';
+import { useStaticQuery, graphql } from "gatsby"
 
 const useLinks = () => {
   const query = useStaticQuery(
     graphql`
       query {
-        people: allPeopleCsv{
+        people: allPeopleCsv {
           nodes {
             name
           }
         }
-        googleScholarPublications(list: {elemMatch: {title: {regex: "/.*/"}}}) {
-          list{
+        googleScholarPublications(
+          list: { elemMatch: { title: { regex: "/.*/" } } }
+        ) {
+          list {
             title
           }
         }
-        markdown: allMarkdownRemark(filter: { fileAbsolutePath: { regex: "/pi.md/" } }) {
+        markdown: allMarkdownRemark(
+          filter: { fileAbsolutePath: { regex: "/pi.md/" } }
+        ) {
           edges {
             node {
               id
@@ -22,22 +26,22 @@ const useLinks = () => {
           }
         }
       }
-    `,
-  );
+    `
+  )
 
-  const links = [];
+  const links = []
 
   if (query?.people?.nodes.length > 0) {
-    links.push('people');
+    links.push("people")
   }
   if (query?.googleScholarPublications) {
-    links.push('publications');
+    links.push("publications")
   }
   if (query?.markdown?.edges?.length > 0) {
-    links.push('pi');
+    links.push("pi")
   }
 
-  return links;
-};
+  return links
+}
 
-export default useLinks;
+export default useLinks

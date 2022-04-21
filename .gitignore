@@ -70,3 +70,6 @@ yarn-error.log
 
 .vscode
 gatsby-config.js
+wget-log
+src/data/people.csv
+deploy.sh

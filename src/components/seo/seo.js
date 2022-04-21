@@ -1,14 +1,9 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import { Helmet } from 'react-helmet';
-import { useStaticQuery, graphql } from 'gatsby';
+import React from "react"
+import PropTypes from "prop-types"
+import { Helmet } from "react-helmet"
+import { useStaticQuery, graphql } from "gatsby"
 
-function SEO({
-  description,
-  lang,
-  meta,
-  title,
-}) {
+function SEO({ description, lang, meta, title }) {
   const { site } = useStaticQuery(
     graphql`
       query {
@@ -20,20 +15,16 @@ function SEO({
           }
         }
       }
-    `,
-  );
+    `
+  )
 
-  const {
-    defaultDescription,
-    defaultTitle,
-    siteUrl,
-  } = site.siteMetadata;
+  const { defaultDescription, defaultTitle, siteUrl } = site.siteMetadata
 
   const seo = {
     description: description || defaultDescription,
     title: title || defaultTitle,
     url: siteUrl,
-  };
+  }
 
   return (
     <Helmet
@@ -44,49 +35,49 @@ function SEO({
       titleTemplate={`%s | ${defaultTitle}`}
       meta={[
         {
-          name: 'description',
+          name: "description",
           content: seo.description,
         },
         {
-          property: 'og:title',
+          property: "og:title",
           content: seo.title,
         },
         {
-          property: 'og:description',
+          property: "og:description",
           content: seo.description,
         },
         {
-          property: 'og:type',
-          content: 'website',
+          property: "og:type",
+          content: "website",
         },
         {
-          property: 'og:url',
+          property: "og:url",
           content: seo.url,
         },
         {
-          property: 'twitter:title',
+          property: "twitter:title",
           content: seo.title,
         },
         {
-          property: 'twitter:description',
+          property: "twitter:description",
           content: seo.description,
         },
       ].concat(meta)}
     />
-  );
+  )
 }
 
 SEO.defaultProps = {
-  lang: 'en',
+  lang: "en",
   meta: [],
-  description: '',
-};
+  description: "",
+}
 
 SEO.propTypes = {
   description: PropTypes.string,
   lang: PropTypes.string,
   meta: PropTypes.arrayOf(PropTypes.object),
   title: PropTypes.string.isRequired,
-};
+}
 
-export default SEO;
+export default SEO

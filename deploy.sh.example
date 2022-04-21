@@ -1,0 +1,20 @@
+#!/bin/bash
+set -eux
+
+BUILD_DIR="./public"
+REMOTE_DIR="~/.www"
+
+SCP_USER=""
+SCP_REMOTE=""
+
+PEOPLE_SHEET_KEY=""
+PEOPLE_SHEET_GID="0"
+PEOPLE_SHEET_URL="https://docs.google.com/spreadsheets/d/$PEOPLE_SHEET_KEY/export?format=csv&gid=$PEOPLE_SHEET_GID"
+
+PEOPLE_FILE_LOCAL="./src/data/people.csv"
+
+wget -O $PEOPLE_FILE_LOCAL $PEOPLE_SHEET_URL
+
+npm run format
+npm run build
+scp -r $BUILD_DIR/* $SCP_USER@$SCP_REMOTE:$REMOTE_DIR

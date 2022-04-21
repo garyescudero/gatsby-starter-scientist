@@ -1,30 +1,18 @@
-import PropTypes from 'prop-types';
-import React from 'react';
+import PropTypes from "prop-types"
+import React from "react"
 
-import Links from './links';
+import Links from "./links"
 
-import './footer.css';
+import "./footer.css"
 
-const Footer = ({
-  author,
-  links,
-}) => (
+const Footer = ({ author, links }) => (
   <footer className="footer">
-    {
-      links.length > 0
-      && <Links links={links} />
-    }
+    {links.length > 0 && <Links links={links} />}
     <small>
-      ©
-      {' '}
-      {author}
-      ,
-      {' '}
-      {new Date().getFullYear()}
-      .
+      © {author}, {new Date().getFullYear()}.
     </small>
   </footer>
-);
+)
 
 Footer.propTypes = {
   author: PropTypes.string.isRequired,
@@ -32,8 +20,8 @@ Footer.propTypes = {
     PropTypes.shape({
       link: PropTypes.string,
       text: PropTypes.string,
-    }),
+    })
   ).isRequired,
-};
+}
 
-export default Footer;
+export default Footer

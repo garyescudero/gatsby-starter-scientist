@@ -10,8 +10,9 @@ const formatItem = article => (
     <strong>
       <Link to={article.link}>{formatTitle(article.title)}</Link>
     </strong>
-    <br/>
-    {article.authors}<br/>
+    <br />
+    {article.authors}
+    <br />
     {article.publication}
   </li>
 )

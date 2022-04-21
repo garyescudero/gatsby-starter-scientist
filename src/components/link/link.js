@@ -1,10 +1,11 @@
-import PropTypes from 'prop-types';
-import React from 'react';
-import { Link, withPrefix } from 'gatsby';
+import PropTypes from "prop-types"
+import React from "react"
+import { Link, withPrefix } from "gatsby"
 
-import './link.css';
+import "./link.css"
 
-const formatClass = (classes) => (classes.length > 0 ? classes.join(' ') : undefined);
+const formatClass = classes =>
+  classes.length > 0 ? classes.join(" ") : undefined
 
 const CustomLink = ({
   buttonStyle,
@@ -15,55 +16,44 @@ const CustomLink = ({
   to,
   ...props
 }) => {
-  const classes = className ? [className] : [];
+  const classes = className ? [className] : []
   if (nav) {
-    classes.push('link_nav');
+    classes.push("link_nav")
   }
   if (buttonStyle) {
-    classes.push('link_button');
+    classes.push("link_button")
   }
   if (outline) {
-    classes.push('link_outline');
+    classes.push("link_outline")
   }
 
-  if (to.startsWith('/') && /\.[0-9a-z]+$/i.test(to)) {
+  if (to.startsWith("/") && /\.[0-9a-z]+$/i.test(to)) {
     return (
-      <a
-        className={formatClass(classes)}
-        href={withPrefix(to)}
-        {...props}
-      >
+      <a className={formatClass(classes)} href={withPrefix(to)} {...props}>
         {children}
       </a>
-    );
-  } if (to.startsWith('/')) {
+    )
+  }
+  if (to.startsWith("/")) {
     return (
-      <Link
-        className={formatClass(classes)}
-        to={to}
-        {...props}
-      >
+      <Link className={formatClass(classes)} to={to} {...props}>
         {children}
       </Link>
-    );
+    )
   }
   return (
-    <a
-      className={formatClass(classes)}
-      href={to}
-      {...props}
-    >
+    <a className={formatClass(classes)} href={to} {...props}>
       {children}
     </a>
-  );
-};
+  )
+}
 
 CustomLink.defaultProps = {
   buttonStyle: false,
-  className: '',
+  className: "",
   nav: false,
   outline: false,
-};
+}
 
 CustomLink.propTypes = {
   buttonStyle: PropTypes.bool,
@@ -72,6 +62,6 @@ CustomLink.propTypes = {
   nav: PropTypes.bool,
   outline: PropTypes.bool,
   to: PropTypes.string.isRequired,
-};
+}
 
-export default CustomLink;
+export default CustomLink

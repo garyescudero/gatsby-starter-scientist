@@ -1,5 +1,5 @@
-const fetchArticles = require('./fetch-articles');
+const fetchArticles = require("./fetch-articles")
 
-const getPublications = async (ids) => fetchArticles(ids);
+const getPublications = async ids => fetchArticles(ids)
 
-module.exports = getPublications;
+module.exports = getPublications

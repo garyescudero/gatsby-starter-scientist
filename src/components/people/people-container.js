@@ -1,9 +1,9 @@
-import React from 'react';
-import { useStaticQuery, graphql } from 'gatsby';
+import React from "react"
+import { useStaticQuery, graphql } from "gatsby"
 
-import People from './people';
+import People from "./people"
 
-import sortMarkdown from '../../utils/sort-markdown';
+import sortMarkdown from "../../utils/sort-markdown"
 
 const PeopleContainer = () => {
   // const query = useStaticQuery(
@@ -42,25 +42,23 @@ const PeopleContainer = () => {
     graphql`
       query {
         allPeopleCsv {
-            nodes {
-              category
-              current_or_alumni
-              description
-              email
-              name
-              order
-              title
-            }
+          nodes {
+            category
+            current_or_alumni
+            description
+            email
+            name
+            order
+            title
+          }
         }
       }
-    `,
-  );
+    `
+  )
 
-  return (
-    query.allPeopleCsv?.nodes?.length > 0
-      ? <People personList={query.allPeopleCsv.nodes} />
-      : null
-  );
-};
+  return query.allPeopleCsv?.nodes?.length > 0 ? (
+    <People personList={query.allPeopleCsv.nodes} />
+  ) : null
+}
 
-export default PeopleContainer;
+export default PeopleContainer

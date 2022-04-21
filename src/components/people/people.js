@@ -20,7 +20,7 @@ const categorySortMap = new Map([
   ["UNDERGRAD", 7],
   ["VOLUNTEER", 8],
   ["VISITING", 9],
-]);
+])
 
 const sortPeople = (a, b) => {
   const aValue = categorySortMap.get(a.category) * 1000 + a.order
@@ -33,18 +33,18 @@ const sortPeople = (a, b) => {
     return 1
   }
   return 0
-};
+}
 
 const People = ({ personList }) => {
   const currentPeople = personList
-    .filter(p =>  p.category != "VOLUNTEER" && p.current_or_alumni == "CURRENT")
-    .sort(sortPeople);
-    const volunteerPeople = personList
+    .filter(p => p.category != "VOLUNTEER" && p.current_or_alumni == "CURRENT")
+    .sort(sortPeople)
+  const volunteerPeople = personList
     .filter(p => p.category == "VOLUNTEER" && p.current_or_alumni == "CURRENT")
-    .sort(sortPeople);
-    const alumniPeople = personList
+    .sort(sortPeople)
+  const alumniPeople = personList
     .filter(p => p.current_or_alumni == "ALUMNI")
-    .sort(sortPeople);
+    .sort(sortPeople)
   return (
     <div className="people">
       <section>
@@ -54,30 +54,28 @@ const People = ({ personList }) => {
         </header>
 
         <h2>Current Lab Members</h2>
-        <ul className="people__list">
-          {currentPeople.map(Person)}
-        </ul>
+        <ul className="people__list">{currentPeople.map(Person)}</ul>
         <h3>Volunteers</h3>
-        <ul className="people__list">
-          {volunteerPeople.map(SimplePerson)}
-        </ul>
+        <ul className="people__list">{volunteerPeople.map(SimplePerson)}</ul>
 
         <h2>Alumni</h2>
         <h3>PhD</h3>
         <ul className="people__list">
-          {alumniPeople.filter(p =>  p.category == "PHD").map(AlumniPerson)}
+          {alumniPeople.filter(p => p.category == "PHD").map(AlumniPerson)}
         </ul>
         <h3>Masters</h3>
         <ul className="people__list">
-          {alumniPeople.filter(p =>  p.category == "MASTERS").map(AlumniPerson)}
+          {alumniPeople.filter(p => p.category == "MASTERS").map(AlumniPerson)}
         </ul>
         <h3>Undergrad</h3>
         <ul className="people__list">
-          {alumniPeople.filter(p =>  p.category == "UNDERGRAD").map(SimplePerson)}
+          {alumniPeople
+            .filter(p => p.category == "UNDERGRAD")
+            .map(SimplePerson)}
         </ul>
         <h3>Visiting Students</h3>
         <ul className="people__list">
-          {alumniPeople.filter(p =>  p.category == "VISITING").map(AlumniPerson)}
+          {alumniPeople.filter(p => p.category == "VISITING").map(AlumniPerson)}
         </ul>
       </section>
     </div>
@@ -86,29 +84,27 @@ const People = ({ personList }) => {
 
 const Person = person => (
   <li key={person.name}>
-    {person.image &&  <Portrait image={person.image} name={person.name} /> }
+    {person.image && <Portrait image={person.image} name={person.name} />}
     <div>
       <h4>{person.name}</h4>
       {person.title && <h5>{person.title}</h5>}
       {person.email && (
-        <Link
-          className="person__list-email"
-          to={`mailto:${person.email}`}
-        >
+        <Link className="person__list-email" to={`mailto:${person.email}`}>
           {person.email}
         </Link>
       )}
-      {person.description && <div dangerouslySetInnerHTML={{ __html: person.description }} />}
+      {person.description && (
+        <div dangerouslySetInnerHTML={{ __html: person.description }} />
+      )}
     </div>
   </li>
-);
+)
 
 const SimplePerson = person => (
   <li key={person.name}>
-      <h4>{person.name}</h4>
+    <h4>{person.name}</h4>
   </li>
-);
-
+)
 
 const AlumniPerson = person => (
   <li key={person.name}>
@@ -117,7 +113,7 @@ const AlumniPerson = person => (
       {person.title && <h5>{person.title}</h5>}
     </div>
   </li>
-);
+)
 
 People.propTypes = {
   markdown: PropTypes.arrayOf(

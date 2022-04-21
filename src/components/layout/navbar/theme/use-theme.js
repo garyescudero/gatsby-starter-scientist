@@ -1,46 +1,49 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState } from "react"
 
-import { getLocalStorage, setLocalStorage } from '../../../../utils/local-storage';
+import {
+  getLocalStorage,
+  setLocalStorage,
+} from "../../../../utils/local-storage"
 
 const useTheme = () => {
-  const [darkMode, toggleState] = useState(false);
+  const [darkMode, toggleState] = useState(false)
 
   const toggle = () => {
-    const newMode = !darkMode;
-    const classToAdd = newMode === true ? 'dark-mode' : 'light-mode';
-    const classToRemove = newMode === true ? 'light-mode' : 'dark-mode';
+    const newMode = !darkMode
+    const classToAdd = newMode === true ? "dark-mode" : "light-mode"
+    const classToRemove = newMode === true ? "light-mode" : "dark-mode"
     if (document.body.classList.contains(classToRemove)) {
-      document.body.classList.replace(classToRemove, classToAdd);
+      document.body.classList.replace(classToRemove, classToAdd)
     } else {
-      document.body.classList.add(classToAdd);
+      document.body.classList.add(classToAdd)
     }
-    toggleState(newMode);
-    setLocalStorage('darkMode', newMode);
-  };
+    toggleState(newMode)
+    setLocalStorage("darkMode", newMode)
+  }
 
   useEffect(() => {
     const updateMode = () => {
-      const storedMode = getLocalStorage('darkMode');
+      const storedMode = getLocalStorage("darkMode")
       if (storedMode !== darkMode) {
-        toggleState(storedMode);
+        toggleState(storedMode)
       }
-    };
+    }
 
-    window.addEventListener('storage', updateMode);
-    return window.removeEventListener('storage', updateMode);
-  });
+    window.addEventListener("storage", updateMode)
+    return window.removeEventListener("storage", updateMode)
+  })
 
   useEffect(() => {
-    const bodyMode = document.body.className.includes('dark-mode');
+    const bodyMode = document.body.className.includes("dark-mode")
     if (bodyMode !== darkMode) {
-      toggleState(bodyMode);
+      toggleState(bodyMode)
     }
-  }, []);
+  }, [])
 
   return {
     darkMode,
     toggle,
-  };
-};
+  }
+}
 
-export default useTheme;
+export default useTheme
