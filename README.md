@@ -183,8 +183,10 @@ TODO:
 
 - People from a csv X
 - Scientist page X
-- Twitter embed
 - Youtube embed X
-- Beter images
 - Opportunities X
 - Book section
+- More heraldry
+- Twitter embed
+- Beter images
+- less cartoony?
