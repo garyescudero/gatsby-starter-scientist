@@ -54,7 +54,7 @@ const People = ({ personList }) => {
         </header>
 
         <h2>Current Lab Members</h2>
-        <ul className="people__list">{currentPeople.map(Person)}</ul>
+        <ul className="people__list current">{currentPeople.map(Person)}</ul>
         <h3>Volunteers</h3>
         <ul className="people__list">{volunteerPeople.map(SimplePerson)}</ul>
 
@@ -84,7 +84,7 @@ const People = ({ personList }) => {
 
 const Person = person => (
   <li key={person.name}>
-    {person.image && <Portrait image={person.image} name={person.name} />}
+    <Portrait image={person.image} name={person.name} />
     <div>
       <h4>{person.name}</h4>
       {person.title && <h5>{person.title}</h5>}
@@ -93,9 +93,7 @@ const Person = person => (
           {person.email}
         </Link>
       )}
-      {person.description && (
-        <div dangerouslySetInnerHTML={{ __html: person.description }} />
-      )}
+      {person.description && <p>{person.description}</p>}
     </div>
   </li>
 )
@@ -115,20 +113,16 @@ const AlumniPerson = person => (
   </li>
 )
 
-People.propTypes = {
-  markdown: PropTypes.arrayOf(
-    PropTypes.shape({
-      node: PropTypes.shape({
-        frontmatter: PropTypes.shape({
-          email: PropTypes.string,
-          image: PropTypes.shape({}),
-          name: PropTypes.string,
-          title: PropTypes.string,
-        }),
-        html: PropTypes.node,
-      }),
-    })
-  ).isRequired,
-}
+People.propTypes = PropTypes.arrayOf(
+  PropTypes.shape({
+    category: PropTypes.string,
+    current_or_alumni: PropTypes.string,
+    description: PropTypes.string,
+    image: PropTypes.shape({}),
+    name: PropTypes.string,
+    title: PropTypes.string,
+    order: PropTypes.string,
+  })
+).isRequired
 
 export default People

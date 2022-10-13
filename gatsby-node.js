@@ -107,10 +107,27 @@ exports.createSchemaCustomization = ({ actions, schema }) => {
         name: "String",
         title: "String",
         category: "String",
-        //  image: "String",
-        current_alumni: "String",
+        image: {
+          type: "File",
+          resolve: async (src, args, context, info) => {
+            const { fieldName } = info
+            const name = src.name
+            // const path = `${__dirname}/src/images/people/${name.trim()}.jpg`
+
+            return await context.nodeModel.findOne({
+              type: "File",
+              query: {
+                filter: {
+                  name: {
+                    eq: src.name,
+                  },
+                },
+              },
+            })
+          },
+        },
+        current_or_alumni: "String",
         description: "String",
-        email: "String",
       },
       interfaces: ["Node"],
     }),
@@ -125,7 +142,8 @@ exports.onCreateBabelConfig = ({ actions }) => {
 }
 
 const parseGSArticles = gsArticles => {
-  return gsArticles.map(gsArticle => ({
+  //console.log(gsArticles)
+  return gsArticles?.map(gsArticle => ({
     authors: gsArticle.authors,
     title: gsArticle.title,
     year: gsArticle.year,
@@ -146,9 +164,12 @@ const fetchGSArticles = async (userId, serpAPIKey) => {
       }`,
     })
 
-    resultArticles.push(...parseGSArticles(response.data.articles))
+    //console.log(response)
+    if (response.data.articles) {
+      resultArticles.push(...parseGSArticles(response.data.articles))
+    }
 
-    moreArticles = response.data.articles.length == 100
+    moreArticles = response.data.articles?.length == 100
     i++
   }
 

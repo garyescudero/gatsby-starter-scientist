@@ -10,6 +10,8 @@ const Portrait = ({ name, image }) =>
       alt={name}
       className="people__list-image"
       image={image.childImageSharp.gatsbyImageData}
+      width={200}
+      height={300}
     />
   ) : (
     <div className="people__list-image">

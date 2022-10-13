@@ -69,7 +69,9 @@ yarn-error.log
 .yarn-integrity
 
 .vscode
+# Private stuff
 gatsby-config.js
 wget-log
 src/data/people.csv
+src/images/people/*.jpg
 deploy.sh

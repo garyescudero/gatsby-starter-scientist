@@ -24,9 +24,11 @@ title: Professor of Biomedical Engineering
 
 ### [Centre for Biomedical Research](http://cbr.uvic.ca/)
 
-- Work telephone: 250-721-7303
-- Email: willerth@uvic.ca
-- Office: EOW 513
+<br>
+
+**Work telephone:** 250-721-7303<br>
+**Email:** willerth@uvic.ca<br>
+**Office:** EOW 513<br>
 
 ## Education:
 

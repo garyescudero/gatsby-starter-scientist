@@ -13,12 +13,7 @@ const PIContainer = () => {
             email
             image {
               childImageSharp {
-                gatsbyImageData(
-                  quality: 100
-                  placeholder: BLURRED
-                  height: 300
-                  width: 300
-                )
+                gatsbyImageData(quality: 100, placeholder: BLURRED, height: 300)
               }
             }
             name

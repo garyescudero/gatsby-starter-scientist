@@ -3,18 +3,22 @@
   display: flex;
   flex-direction: column;
 }
+
 .people header {
   align-items: center;
   display: flex;
   margin-bottom: 1.5rem;
 }
+
 .people header h1 {
   margin-bottom: 0;
 }
+
 .people header svg {
   color: var(--color-primary);
   margin-left: 1rem;
 }
+
 .people section {
   margin: 2rem 0;
   max-width: 960px;
@@ -25,33 +29,71 @@
   list-style: none;
   margin-left: 0;
 }
+
 .people__list li {
-  align-items: center;
-  display: flex;
   margin-bottom: 1rem;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-content: flex-start;
+  justify-content: space-between;
+  align-items: flex-start;
+  width: 100%;
 }
-.people__list li h2,
-.people__list li h3,
-.people__list li h4,
-.people__list li h5 {
+
+.people__list.current li {
+
+  min-height: 200px;
+  margin-bottom: 3rem;
+}
+
+.people  h2 {
+  font-size: 1.9rem;
+  color: var(--color-primary);
+}
+
+.people h3 {
+  font-size: 1.6rem;
+  color: var(--color-primary);
+}
+
+.people h4 {
+  font-size: 1.4rem;
+}
+
+
+.people h5 {
+  font-size: 1.2rem;
+}
+
+
+.people h3,
+.people h4,
+.people h5 {
   margin-bottom: 0;
-  line-height: 1rem;
+
 }
+
+.people p {
+  margin-bottom: 0;
+}
+
 .person__list-email {
   display: inline-block;
   margin-bottom: 0.5rem;
 }
+
+
 .people__list-image {
+  min-width: 200px;
   align-items: center;
   border: 2px solid var(--color-primary);
   border-radius: 0.3rem;
   display: flex;
   justify-content: center;
-  height: 300px;
   margin-right: 1.5rem;
-  min-width: 300px;
-  width: 300px;
 }
+
 .people__list-image svg {
   fill: var(--color-primary);
   height: 65%;
@@ -61,7 +103,6 @@
 
 @media (max-width: 750px) {
   .people__list li {
-    align-items: center;
     flex-direction: column;
   }
   .people__list-image {

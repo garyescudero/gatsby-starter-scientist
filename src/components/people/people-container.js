@@ -3,8 +3,6 @@ import { useStaticQuery, graphql } from "gatsby"
 
 import People from "./people"
 
-import sortMarkdown from "../../utils/sort-markdown"
-
 const PeopleContainer = () => {
   // const query = useStaticQuery(
   //   graphql`
@@ -46,7 +44,17 @@ const PeopleContainer = () => {
             category
             current_or_alumni
             description
-            email
+            image {
+              childImageSharp {
+                gatsbyImageData(
+                  quality: 70
+                  placeholder: BLURRED
+                  width: 300
+                  layout: CONSTRAINED
+                  transformOptions: { fit: OUTSIDE }
+                )
+              }
+            }
             name
             order
             title
